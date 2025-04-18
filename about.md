@@ -1,18 +1,30 @@
 ---
 layout: page
-title: About
-permalink: /about/
+title: Detalles del Proyecto
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+# Arquitectura del Proyecto
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+Tengo una Raspberry Pi con 4 interfaces de red WiFi:
+- `wg0`: Interfaz de la VPN con WireGuard
+- `wlan0`: Provee conexión a internet a la Raspberry
+- `wlan1`: WiFi para pentesting (chip Atheros)
+- `wlan2`: Actúa como router para otros dispositivos
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+## 🔒 Conexión VPN WireGuard
 
+1. Tengo un VPS como servidor WireGuard.
+2. Configuré dos clientes:
+   - Mi laptop personal
+   - La Raspberry Pi Kali ARM
+3. Ambas se conectan al mismo túnel VPN.
+4. Usan una subred privada tipo `10.10.10.0/24`
 
-[jekyll-organization]: https://github.com/jekyll
+## 🔗 Conexión por VNC Viewer
+
+Una vez establecida la VPN, desde mi laptop uso `VNC Viewer` para conectarme a la IP privada de la Raspberry dentro de la VPN (`10.10.10.X`).
+
+## 🔧 Extras Técnicos
+
+- Configuré `iptables`/`nftables` para redireccionar tráfico.
+- Hice forwarding de `wlan1` a `wlan2` para permitir salida a internet.
