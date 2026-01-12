@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
             --bg-color: #0a0a0a;
             --card-bg: #161b22;
             --text-main: #c9d1d9;
-            --accent: #238636; /* Verde GitHub/Hacker */
+            --accent: #238636; /* GitHub/Hacker Green */
             --accent-hover: #2ea043;
             --code-font: 'Courier New', Courier, monospace;
         }
@@ -37,7 +37,7 @@
 
         .role {
             font-family: var(--code-font);
-            color: #58a6ff; /* Azul terminal */
+            color: #58a6ff; /* Terminal Blue */
             font-size: 1.2rem;
         }
 
@@ -47,7 +47,7 @@
             padding: 2rem 1rem;
         }
 
-        /* Sección de Presentación */
+        /* Intro Section */
         .intro {
             margin-bottom: 3rem;
             text-align: center;
@@ -59,7 +59,7 @@
             font-size: 1.1rem;
         }
 
-        /* Tarjeta del Proyecto */
+        /* Project Card */
         .project-card {
             background-color: var(--card-bg);
             border: 1px solid #30363d;
@@ -85,7 +85,7 @@
         }
 
         .mr-robot-badge {
-            background-color: #b31d28; /* Rojo Mr Robot */
+            background-color: #b31d28; /* Mr Robot Red */
             color: white;
             padding: 5px 10px;
             border-radius: 4px;
@@ -100,7 +100,7 @@
             border-radius: 6px;
             border: 1px solid #30363d;
             margin: 1.5rem 0;
-            background-color: #fff; /* Fondo blanco para que se vea bien tu diagrama transparente */
+            background-color: #fff; /* White background for transparent diagrams */
             padding: 10px;
         }
 
@@ -139,7 +139,7 @@
 <body>
 
     <header>
-        <h1>Hola, soy Franco</h1>
+        <h1>Hello, I'm Franco</h1>
         <div class="role">&lt;Cyber Security Enthusiast & Pentester /&gt;</div>
     </header>
 
@@ -147,14 +147,14 @@
         
         <section class="intro">
             <p>
-                Soy un apasionado de la ciberseguridad ofensiva y defensiva. 
-                Me especializo en entornos Linux, auditorías de red y despliegue de infraestructura segura. 
-                Aquí documento mis proyectos, laboratorios y herramientas personalizadas.
+                I am passionate about offensive and defensive cybersecurity. 
+                I specialize in Linux environments, network auditing, and secure infrastructure deployment. 
+                Here I document my projects, labs, and custom tools.
             </p>
         </section>
 
         <section id="projects">
-            <h2 style="border-bottom: 2px solid #30363d; padding-bottom: 10px;">Proyectos Destacados</h2>
+            <h2 style="border-bottom: 2px solid #30363d; padding-bottom: 10px;">Featured Projects</h2>
 
             <article class="project-card">
                 <div class="project-header">
@@ -163,23 +163,23 @@
                 </div>
 
                 <p>
-                    <strong>El Concepto:</strong> Inspirado en la táctica clásica utilizada por Elliot Alderson en la serie <em>Mr. Robot</em>. 
-                    El objetivo era crear un dispositivo físico discreto (Drop Box) que pudiera dejarse conectado en una instalación objetivo 
-                    (un edificio, oficina, etc.) para establecer persistencia.
+                    <strong>The Concept:</strong> Inspired by the classic tactic used by Elliot Alderson in the series <em>Mr. Robot</em>. 
+                    The goal was to create a discreet physical device (Drop Box) that could be left connected at a target facility 
+                    (building, office, etc.) to establish persistence.
                 </p>
 
                 <p>
-                    Este dispositivo permite al operador irse a casa y conectarse remotamente a la red interna del objetivo 
-                    de manera segura y cómoda, simulando estar físicamente en el lugar.
+                    This device allows the operator to leave the site and remotely connect to the target's internal network 
+                    securely and comfortably, simulating a physical presence on-site.
                 </p>
 
-                <img src="topology.png" alt="Diagrama de Red WireGuard y Raspberry Pi" class="topology-img">
+                <img src="topology.png" alt="WireGuard and Raspberry Pi Network Diagram" class="topology-img">
 
-                <h4>Cómo funciona:</h4>
+                <h4>How it works:</h4>
                 <ul>
-                    <li><strong>Hardware:</strong> Raspberry Pi 4 (8GB RAM) actuando como Gateway.</li>
-                    <li><strong>Conexión C2:</strong> Utiliza un túnel reverso con <strong>WireGuard</strong> hacia un VPS externo (nube).</li>
-                    <li><strong>Acceso Remoto:</strong> Permite realizar auditorías internas y escaneos de vulnerabilidades a través del túnel VPN sin exponer puertos locales.</li>
+                    <li><strong>Hardware:</strong> Raspberry Pi 4 (8GB RAM) acting as a Gateway.</li>
+                    <li><strong>C2 Connection:</strong> Uses a reverse <strong>WireGuard</strong> tunnel pointing to an external VPS (cloud).</li>
+                    <li><strong>Remote Access:</strong> Enables internal audits and vulnerability scans through the VPN tunnel without exposing local ports.</li>
                 </ul>
 
                 <div class="tech-stack">
@@ -187,7 +187,7 @@
                 </div>
 
                 <a href="https://github.com/framcoty322/vpn-wireguard-rpi-gateway" class="btn">
-                    Ver Código en GitHub
+                    View Code on GitHub
                 </a>
             </article>
         </section>
