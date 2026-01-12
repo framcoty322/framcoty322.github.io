@@ -1,12 +1,202 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Framcoty322</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Franco | Cyber Security Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --card-bg: #161b22;
+            --text-main: #c9d1d9;
+            --accent: #238636; /* Verde GitHub/Hacker */
+            --accent-hover: #2ea043;
+            --code-font: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--card-bg);
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 1px solid #30363d;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .role {
+            font-family: var(--code-font);
+            color: #58a6ff; /* Azul terminal */
+            font-size: 1.2rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        /* Sección de Presentación */
+        .intro {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .intro p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* Tarjeta del Proyecto */
+        .project-card {
+            background-color: var(--card-bg);
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.8rem;
+            margin: 0;
+            color: #fff;
+        }
+
+        .mr-robot-badge {
+            background-color: #b31d28; /* Rojo Mr Robot */
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-family: var(--code-font);
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .topology-img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            border: 1px solid #30363d;
+            margin: 1.5rem 0;
+            background-color: #fff; /* Fondo blanco para que se vea bien tu diagrama transparente */
+            padding: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background 0.3s;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .tech-stack {
+            font-family: var(--code-font);
+            color: #8b949e;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            color: #8b949e;
+            border-top: 1px solid #30363d;
+        }
+    </style>
 </head>
 <body>
-  <h1>Hola, soy Franco</h1>
-  <p>Mi GitHub Pages ya está funcionando ✅</p>
+
+    <header>
+        <h1>Hola, soy Franco</h1>
+        <div class="role">&lt;Cyber Security Enthusiast & Pentester /&gt;</div>
+    </header>
+
+    <div class="container">
+        
+        <section class="intro">
+            <p>
+                Soy un apasionado de la ciberseguridad ofensiva y defensiva. 
+                Me especializo en entornos Linux, auditorías de red y despliegue de infraestructura segura. 
+                Aquí documento mis proyectos, laboratorios y herramientas personalizadas.
+            </p>
+        </section>
+
+        <section id="projects">
+            <h2 style="border-bottom: 2px solid #30363d; padding-bottom: 10px;">Proyectos Destacados</h2>
+
+            <article class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">VPN Drop-Box Gateway (RPI 4)</h3>
+                    <span class="mr-robot-badge">Inspired by Mr. Robot</span>
+                </div>
+
+                <p>
+                    <strong>El Concepto:</strong> Inspirado en la táctica clásica utilizada por Elliot Alderson en la serie <em>Mr. Robot</em>. 
+                    El objetivo era crear un dispositivo físico discreto (Drop Box) que pudiera dejarse conectado en una instalación objetivo 
+                    (un edificio, oficina, etc.) para establecer persistencia.
+                </p>
+
+                <p>
+                    Este dispositivo permite al operador irse a casa y conectarse remotamente a la red interna del objetivo 
+                    de manera segura y cómoda, simulando estar físicamente en el lugar.
+                </p>
+
+                <img src="topology.png" alt="Diagrama de Red WireGuard y Raspberry Pi" class="topology-img">
+
+                <h4>Cómo funciona:</h4>
+                <ul>
+                    <li><strong>Hardware:</strong> Raspberry Pi 4 (8GB RAM) actuando como Gateway.</li>
+                    <li><strong>Conexión C2:</strong> Utiliza un túnel reverso con <strong>WireGuard</strong> hacia un VPS externo (nube).</li>
+                    <li><strong>Acceso Remoto:</strong> Permite realizar auditorías internas y escaneos de vulnerabilidades a través del túnel VPN sin exponer puertos locales.</li>
+                </ul>
+
+                <div class="tech-stack">
+                    Stacks: [ Raspberry Pi OS, WireGuard, VPS, Kali Linux Tools, Networking ]
+                </div>
+
+                <a href="https://github.com/framcoty322/vpn-wireguard-rpi-gateway" class="btn">
+                    Ver Código en GitHub
+                </a>
+            </article>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Franco | Hosted on GitHub Pages</p>
+    </footer>
+
 </body>
 </html>
